@@ -10,3 +10,5 @@ venv/*
 source/*
 build/*
 mindfulbrowsing.zip
+extension.crx
+extension.pem
