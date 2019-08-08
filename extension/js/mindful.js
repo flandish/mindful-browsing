@@ -87,7 +87,7 @@
                 "websites": saveWebsites,
                 "thingsToDo": saveThingsToDo,
                 "timeouts": timeouts,
-                "currentPhoto": currentPhoto,
+                // "currentPhoto": currentPhoto,
             }, function() {
               // Notify that we saved.
             });
@@ -112,17 +112,16 @@
         ele.id="mindfulBrowsingConfirm";
         ele.innerHTML = [
         "<div class='mindfulBrowsingHeading'>",
-            "<h1>Do you want to " + go_verb + " " +site_name+"?</h1>",
-            "<h2>You said you'd usually rather "+rather+". :)</h2>",
+            "<h2>Do something a wee bit better. </h2><br>",
+            "<div class='task'>"+rather+"</h2>",
         "</div>",
         "<div class='options'>",
-            "<a class='mindfulBtn' id='mindfulBrowsingContinue' href='#'>Yes, 10 minutes.</a>",
-            "<a class='mindfulBtn' id='mindfulBrowsingLeave' href='javascript:window.open(location,\"_self\");window.close();'>Actually, nah.</a>",
-        "</div>",
-        "<a href='" + currentPhoto["credit_url"] + "' id='mindfulBrowsingPhotoCredit'>Photo by " + currentPhoto["credit"] + "</a>"
+            "<a class='mindfulBtn' id='mindfulBrowsingContinue' href='#'>"+site_name+" for 10 mins</a>",
+            "<a class='mindfulBtn' id='mindfulBrowsingLeave' href='javascript:window.close();'>Do the thing.</a>",
+        "</div>"
         ].join("");
         ele.style.height = "100%";
-        // ele.style.backgroundColor = "rgba(97, 144, 187, 0.92)";
+        ele.style.backgroundColor = "rgba(97, 144, 187, 0.92)";
         ele.style.background = "linear-gradient(to bottom, rgba(97,144,187,1) 0%,rgba(191,227,255,0.92) 100%)";
 
         // ele.style.backgroundImage = "url('" + currentPhoto["url"] + "')";
@@ -131,7 +130,7 @@
         if (base64 != undefined) {
             ele.style.background = "inherit";
             ele.style.backgroundColor = "rgba(97, 144, 187, 0.92)";
-            ele.style.backgroundImage = "url(" + base64 + ")";
+            // ele.style.backgroundImage = "url(" + base64 + ")";
         }
         ele.style.backgroundSize = "cover";
         ele.style.backgroundPosition = "center center";
@@ -178,7 +177,7 @@
                 // If we're out of sync, update the image.
 
                 var ele = document.getElementById("mindfulBrowsingConfirm");
-                ele.style.backgroundImage = "url(" + base64 + ")";
+                // ele.style.backgroundImage = "url(" + base64 + ")";
             };
             // console.log(xmlHTTP)
             xmlHTTP.send();
